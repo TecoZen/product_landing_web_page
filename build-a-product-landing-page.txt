@@ -1,0 +1,276 @@
+** start of undefined **
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Landing Page</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header id="header">
+    <img id="header-img" src="logo.png" alt="Brand Logo" />
+    <nav id="nav-bar">
+      <a class="nav-link" href="#features">Features</a>
+      <a class="nav-link" href="#how-it-works">How It Works</a>
+      <a class="nav-link" href="#pricing">Pricing</a>
+    </nav>
+  </header>
+
+  <section id="features">
+    <h2>Awesome Features</h2>
+    <div class="feature-list">
+      <div class="feature">High Performance</div>
+      <div class="feature">User-Friendly</div>
+      <div class="feature">24/7 Support</div>
+    </div>
+  </section>
+
+  <section id="how-it-works">
+    <h2>See It In Action</h2>
+    <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+  </section>
+
+  <section id="pricing">
+    <h2>Choose Your Plan</h2>
+    <div class="pricing-container">
+      <div class="price-card">Basic - $10</div>
+      <div class="price-card">Standard - $25</div>
+      <div class="price-card">Premium - $50</div>
+    </div>
+  </section>
+
+  <section id="subscribe">
+    <h2>Subscribe for Updates</h2>
+    <form id="form" action="https://www.freecodecamp.com/email-submit">
+      <input id="email" type="email" name="email" placeholder="Enter your email" required />
+      <input id="submit" type="submit" value="Get Started" />
+    </form>
+  </section>
+</body>
+</html>
+
+
+** end of undefined **
+
+** start of undefined **
+
+/* styles.css */
+
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom, #f5f7fa, #c3cfe2);
+  color: #2c3e50;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+/* Header */
+#header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #ffffffee;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  transition: all 0.3s ease-in-out;
+}
+
+#header-img {
+  height: 50px;
+  transition: transform 0.3s ease;
+}
+
+#header-img:hover {
+  transform: scale(1.1);
+}
+
+#nav-bar {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #2980b9;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #3498db;
+  left: 0;
+  bottom: -4px;
+  transition: width 0.3s;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link:hover {
+  color: #1c5980;
+}
+
+/* Sections */
+section {
+  padding: 6rem 2rem 3rem;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #34495e;
+}
+
+.feature-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.feature {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 16px;
+  flex: 1 1 250px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.feature:hover {
+  transform: translateY(-5px);
+}
+
+#how-it-works iframe {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.price-card {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 16px;
+  flex: 1 1 250px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.price-card:hover {
+  transform: translateY(-5px);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+#email {
+  padding: 0.75rem;
+  width: 100%;
+  max-width: 400px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+#submit {
+  padding: 0.75rem 2rem;
+  background: #27ae60;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-weight: 600;
+}
+
+#submit:hover {
+  background: #1e874b;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  #header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  #nav-bar {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
+    gap: 1rem;
+  }
+
+  .feature-list,
+  .pricing-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  section {
+    padding: 5rem 1.5rem 3rem;
+  }
+}
+
+/* Smooth Animations */
+section, .feature, .price-card, form, iframe {
+  animation: fadeInUp 0.6s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+** end of undefined **
+
