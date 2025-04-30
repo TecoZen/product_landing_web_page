@@ -9,45 +9,74 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header id="header">
-    <img id="header-img" src="logo.png" alt="Brand Logo" />
-    <nav id="nav-bar">
-      <a class="nav-link" href="#features">Features</a>
-      <a class="nav-link" href="#how-it-works">How It Works</a>
-      <a class="nav-link" href="#pricing">Pricing</a>
-    </nav>
-  </header>
+    <header id="header">
+        <img id="header-img" src="https://godslab.mx/cdn/shop/collections/EDICION_5.jpg?v=1732212561" alt="Logo">
+        <nav id="nav-bar">
+          <a class="nav-link" href="#features">Features</a>
+          <a class="nav-link" href="#how-it-works">How it Works</a>
+          <a class="nav-link" href="#pricing">Pricing</a>
+          <div class="cart-wrapper">
+            <span class="cart-icon" id="cart-icon">🛒</span>
+            <span class="cart-count" id="cart-count">2</span>
+          </div>
+        </nav>
+      </header>
+      
+      <!-- Carrito Lateral -->
+      <div class="cart-sidebar" id="cart-sidebar">
+        <button class="cart-close" id="cart-close">✖</button>
+        <h3>Your cart</h3>
+        <ul class="cart-items" id="cart-items">
+          <li class="cart-item">Product 1</li>
+          <li class="cart-item">Product 2</li>
+        </ul>
+        <button class="checkout-btn">Finalizar Pedido</button>
+      </div>
 
+  <!-- Example Sections -->
   <section id="features">
-    <h2>Awesome Features</h2>
+    <h2>Features</h2>
     <div class="feature-list">
-      <div class="feature">High Performance</div>
-      <div class="feature">User-Friendly</div>
-      <div class="feature">24/7 Support</div>
+      <div class="feature"><img id="image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkR8gDbv9C8gyrH6WiQzi3jUEHxgf5hZ7RgQ&s" class="hats"/>Feature 1</div>
+      <div class="feature"><img id="image" src="https://godslab.mx/cdn/shop/collections/EDICION_5.jpg?v=1732212561" class="hats"/>Feature 2</div>
+      <div class="feature"><img id="image" src="https://cdn.shopify.com/s/files/1/0279/6332/6538/files/LOGO_JC_frase_Mesa_de_trabajo_1_3cd2c16a-7f0e-473d-b261-08e54b0692d8.jpg?v=1705511103" class="hats"/>Feature 3</div>
+      
+      
     </div>
   </section>
 
   <section id="how-it-works">
-    <h2>See It In Action</h2>
-    <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
-  </section>
+    <h2>How It Works</h2>
+    <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY" frameborder="0" allowfullscreen></iframe>
+</section>
 
   <section id="pricing">
-    <h2>Choose Your Plan</h2>
+    <h2>Pricing</h2>
     <div class="pricing-container">
-      <div class="price-card">Basic - $10</div>
-      <div class="price-card">Standard - $25</div>
-      <div class="price-card">Premium - $50</div>
+      <div class="price-card"><img id="image" src="https://theicyhats.com/cdn/shop/files/3_a20b3b4e-dfee-4283-94ce-0c34132382e4.png?v=1742338009&width=533" class="hats"/>La DandyHats - $10</div>
+      <div class="price-card"><img id="image" src="https://knzcaps.store/cdn/shop/files/55D84D24-F272-49CA-B555-6A250FC6DE42.jpg?v=1725590738" class="hats"/>Dandy Studios - $20</div>
+      <div class="price-card"><img id="image" src="https://bandejadeplata.mx/cdn/shop/files/1_a2493f7a-d74f-4184-b494-367e7d82ecb8.jpg?v=1737056802" class="hats"/>Barbas Huracan - $30</div>
     </div>
   </section>
 
-  <section id="subscribe">
-    <h2>Subscribe for Updates</h2>
+  <section id="form-section">
+    <h2>Subscribe</h2>
     <form id="form" action="https://www.freecodecamp.com/email-submit">
-      <input id="email" type="email" name="email" placeholder="Enter your email" required />
-      <input id="submit" type="submit" value="Get Started" />
+      <input id="email" type="email" placeholder="Enter your email" required>
+      <input id="submit" type="submit" value="Get Started">
     </form>
   </section>
+
+  <script>
+    const cartIcon = document.getElementById('cart-icon');
+    const cartSidebar = document.getElementById('cart-sidebar');
+  
+    cartIcon.addEventListener('click', () => {
+      cartSidebar.classList.toggle('open');
+    });
+  </script>
+  
+  
 </body>
 </html>
 
@@ -60,217 +89,469 @@
 
 /* Base Reset */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(to bottom, #f5f7fa, #c3cfe2);
-  color: #2c3e50;
-  line-height: 1.6;
-  scroll-behavior: smooth;
-}
-
-/* Header */
-#header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: #ffffffee;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 2rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  backdrop-filter: blur(8px);
-  z-index: 1000;
-  transition: all 0.3s ease-in-out;
-}
-
-#header-img {
-  height: 50px;
-  transition: transform 0.3s ease;
-}
-
-#header-img:hover {
-  transform: scale(1.1);
-}
-
-#nav-bar {
-  display: flex;
-  gap: 2rem;
-}
-
-.nav-link {
-  text-decoration: none;
-  color: #2980b9;
-  font-weight: 600;
-  font-size: 1rem;
-  transition: color 0.3s ease;
-  position: relative;
-}
-
-.nav-link::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  background-color: #3498db;
-  left: 0;
-  bottom: -4px;
-  transition: width 0.3s;
-}
-
-.nav-link:hover::after {
-  width: 100%;
-}
-
-.nav-link:hover {
-  color: #1c5980;
-}
-
-/* Sections */
-section {
-  padding: 6rem 2rem 3rem;
-  max-width: 1200px;
-  margin: auto;
-  text-align: center;
-}
-
-h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-  color: #34495e;
-}
-
-.feature-list {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 2rem;
-  margin-top: 1rem;
-}
-
-.feature {
-  background: #ffffff;
-  padding: 2rem;
-  border-radius: 16px;
-  flex: 1 1 250px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease;
-}
-
-.feature:hover {
-  transform: translateY(-5px);
-}
-
-#how-it-works iframe {
-  max-width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-}
-
-.pricing-container {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.price-card {
-  background: #ffffff;
-  padding: 2rem;
-  border-radius: 16px;
-  flex: 1 1 250px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease;
-  font-weight: 600;
-  color: #2c3e50;
-}
-
-.price-card:hover {
-  transform: translateY(-5px);
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  margin-top: 2rem;
-}
-
-#email {
-  padding: 0.75rem;
-  width: 100%;
-  max-width: 400px;
-  font-size: 1rem;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-}
-
-#submit {
-  padding: 0.75rem 2rem;
-  background: #27ae60;
-  color: white;
-  font-size: 1rem;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-  font-weight: 600;
-}
-
-#submit:hover {
-  background: #1e874b;
-}
-
-/* Media Queries */
-@media (max-width: 768px) {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom, #f5f7fa, #c3cfe2);
+    color: #2c3e50;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+  
+  /* Header */
   #header {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1rem;
-  }
-
-  #nav-bar {
-    flex-direction: column;
+    position: fixed;
+    top: 0;
     width: 100%;
-    margin-top: 1rem;
-    gap: 1rem;
+    background-color: #ffffffee;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
   }
-
-  .feature-list,
+  
+  #header-img {
+    height: 50px;
+    transition: transform 0.3s ease;
+  }
+  
+  #header-img:hover {
+    transform: scale(1.1);
+  }
+  
+  #nav-bar {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: #2980b9;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    position: relative;
+  }
+  
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #3498db;
+    left: 0;
+    bottom: -4px;
+    transition: width 0.3s;
+  }
+  
+  .nav-link:hover::after {
+    width: 100%;
+  }
+  
+  .nav-link:hover {
+    color: #1c5980;
+  }
+  
+  /* Cart Icon */
+  .cart-wrapper {
+    position: relative;
+  }
+  
+  .cart-icon {
+    font-size: 1.6rem;
+    color: #2c3e50;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .cart-icon:hover {
+    transform: scale(1.2);
+    color: #27ae60;
+  }
+  
+  .cart-count {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: #e74c3c;
+    color: white;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    font-weight: bold;
+  }
+  
+  /* Cart Sidebar */
+  .cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100vh;
+    background-color: #ffffff;
+    box-shadow: -2px 0 8px rgba(0,0,0,0.1);
+    transition: right 0.3s ease-in-out;
+    padding: 2rem 1rem;
+    z-index: 9999;
+  }
+  
+  .cart-sidebar.open {
+    right: 0;
+  }
+  
+  .cart-sidebar h3 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: #34495e;
+  }
+  
+  .cart-items {
+    list-style: none;
+    padding: 0;
+    max-height: 70vh;
+    overflow-y: auto;
+    margin-bottom: 2rem;
+  }
+  
+  .cart-item {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #eee;
+    font-weight: 500;
+    color: #2c3e50;
+  }
+  
+  .cart-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #e74c3c;
+  }
+  
+  /* Sections */
+  section {
+    padding: 6rem 2rem 3rem;
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #34495e;
+  }
+  
+  .feature-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 1rem;
+  }
+  
+  .feature {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 16px;
+    flex: 1 1 250px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+  }
+  
+  .feature:hover {
+    transform: translateY(-5px);
+  }
+  
+  #how-it-works iframe {
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+  
   .pricing-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .price-card {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 16px;
+    flex: 1 1 250px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+    font-weight: 600;
+    color: #2c3e50;
+  }
+  
+  .price-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  form {
+    display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
   }
-
-  section {
-    padding: 5rem 1.5rem 3rem;
+  
+  #email {
+    padding: 0.75rem;
+    width: 100%;
+    max-width: 400px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
   }
-}
-
-/* Smooth Animations */
-section, .feature, .price-card, form, iframe {
-  animation: fadeInUp 0.6s ease forwards;
-  opacity: 0;
-}
-
-@keyframes fadeInUp {
-  from {
+  
+  #submit {
+    padding: 0.75rem 2rem;
+    background: #27ae60;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-weight: 600;
+  }
+  
+  #submit:hover {
+    background: #1e874b;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 768px) {
+    #header {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1rem;
+    }
+  
+    #nav-bar {
+      flex-direction: column;
+      width: 100%;
+      margin-top: 1rem;
+      gap: 1rem;
+    }
+  
+    .cart-wrapper {
+      align-self: flex-end;
+      margin: 1rem 0;
+    }
+  
+    .feature-list,
+    .pricing-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    section {
+      padding: 5rem 1.5rem 3rem;
+    }
+  }
+  
+  /* Smooth Animations */
+  section, .feature, .price-card, form, iframe {
+    animation: fadeInUp 0.6s ease forwards;
     opacity: 0;
-    transform: translateY(20px);
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
+  /* Carrito */
+.cart-wrapper {
+    position: relative;
+  }
+  
+  .cart-icon {
+    font-size: 1.6rem;
+    cursor: pointer;
+    color: #2c3e50;
+    transition: transform 0.3s ease;
+  }
+  
+  .cart-icon:hover {
+    transform: scale(1.2);
+    color: #27ae60;
+  }
+  
+  .cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #e74c3c;
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 2px 6px;
+  }
+  
+  /* Panel lateral */
+  .cart-sidebar {
+    position: absolute;
+    top: 60px; /* Ajusta según la altura de tu navbar */
+    right: 10px;
+    width: 300px;
+    max-height: 400px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 9999;
+  }
+  
+  .cart-sidebar.open {
+    display: flex;
+  }
+  
+  
+  .cart-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #ffffff;
+  }
+  
+  .cart-sidebar h3 {
+    margin-top: 0;
+    color: #333;
+  }
+  
+  .cart-items {
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-top: 1rem;
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .cart-item {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .checkout-btn {
+    padding: 0.75rem;
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    width: 100%;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .checkout-btn:hover {
+    background-color: #219150;
+  }
+  
+  .hats {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 1rem auto;
+  }
+  /* Features más dinámicos */
+/* Features más dinámicos */
+.feature {
+    /* background: #ffffff; */ /* ❌ Quitado */
+    padding: 2rem;
+    border-radius: 16px;
+    flex: 1 1 250px;
+    /* box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); */ /* ❌ Quitado */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards, float 5s ease-in-out infinite 0.6s;
 }
 
+/* Pricing cards más dinámicos */
+.price-card {
+    /* background: #ffffff; */ /* ❌ Quitado */
+    padding: 2rem;
+    border-radius: 16px;
+    flex: 1 1 250px;
+    /* box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); */ /* ❌ Quitado */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    font-weight: 600;
+    color: #2c3e50;
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards, float 5s ease-in-out infinite 0.6s;
+}
+
+/* Animación de entrada */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animación de flotación suave */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* Hats (imágenes de productos) dinámicas */
+.hats {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 1rem auto;
+    transition: transform 0.5s ease;
+    /* background: none; */ /* No necesitas background aquí porque ya es una imagen */
+    /* box-shadow: none; */ /* Si no tiene box-shadow, no hay problema */
+}
+
+.hats:hover {
+    transform: rotate(3deg) scale(1.05);
+}
 
 ** end of undefined **
 
